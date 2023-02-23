@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Page.astro';
+
+import { getFirstBlogPost, getSiteSettings } from '../lib/api';
+
+// const settings = await getSiteSettings();
+
+const firstPost = await getFirstBlogPost();
+console.log(firstPost)
+---
+
+<Layout>
+	<main>
+		<h1>Welcome to <span class="text-gradient">Sanity + Astro Crash Course</span></h1>
+		<p>
+			<pre>{firstPost}</pre>
+      {JSON.stringify(firstPost)}
+    </p>
+	</main>
+</Layout>
