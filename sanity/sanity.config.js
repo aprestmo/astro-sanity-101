@@ -6,7 +6,7 @@ import { structure } from "./src/structure";
 
 export default defineConfig({
   name: "default",
-  title: "Sanity Crash Course",
+  title: "Spesialer",
 
   projectId: "ae5h6au0",
   dataset: "development",

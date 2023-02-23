@@ -6,7 +6,7 @@ export default defineConfig({
   integrations: [sanity({
     projectId: 'ae5h6au0',
     dataset: 'development',
-    apiVersion: "v2021-03-25",
+    // apiVersion: "v2021-03-25",
     useCdn: true,
   })]
 });

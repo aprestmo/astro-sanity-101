@@ -52,6 +52,11 @@ export default defineType({
       title: 'Publisert',
       type: 'date',
     }),
+    defineField({
+      name: 'carousel',
+      title: 'Vis i karusell',
+      type: 'boolean',
+    }),
   ],
 
   preview: {
