@@ -1,20 +1,24 @@
 ---
-import Layout from '../layouts/Page.astro';
-
-import { getFirstBlogPost, getSiteSettings } from '../lib/api';
-
+import Layout from "../layouts/Page.astro";
+import { getArticles, getSiteSettings } from "../lib/api";
 // const settings = await getSiteSettings();
-
-const firstPost = await getFirstBlogPost();
-console.log(firstPost)
+const articles = await getArticles();
 ---
 
 <Layout>
-	<main>
-		<h1>Welcome to <span class="text-gradient">Sanity + Astro Crash Course</span></h1>
-		<p>
-			<pre>{firstPost}</pre>
-      {JSON.stringify(firstPost)}
-    </p>
-	</main>
+  <main>
+    <h1>DN Spesialer</h1>
+    <ol>
+      {
+        articles.map((article) => (
+          <li>
+            <a href={article.url} target="_blank">
+              <h2>{article.title}</h2>
+              <p>{article.lead}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </main>
 </Layout>
