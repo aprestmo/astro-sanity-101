@@ -9,7 +9,7 @@ export default defineConfig({
   title: "Spesialer",
 
   projectId: "ae5h6au0",
-  dataset: "development",
+  dataset: "production",
 
   plugins: [
     deskTool({

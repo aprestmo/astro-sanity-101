@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'articles',
+  name: 'article',
   title: 'Artikler',
   type: 'document',
   fields: [
@@ -14,7 +14,7 @@ export default defineType({
       name: 'lead',
       title: 'Ingress',
       type: 'text',
-      rows: 5,
+      rows: 3,
     }),
     defineField({
       name: 'url',
@@ -30,10 +30,28 @@ export default defineType({
     defineField({
       name: 'mainImage',
       title: 'Bilde',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'object',
+      fields: [
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alt text',
+          description: 'A description of the image for robots',
+        },
+      ],
+    }),
+    defineField({
+      name: 'video',
+      title: 'Video',
+      type: 'file',
     }),
     defineField({
       name: 'section',
@@ -56,6 +74,7 @@ export default defineType({
       name: 'carousel',
       title: 'Vis i karusell',
       type: 'boolean',
+      initialValue: false,
     }),
   ],
 
